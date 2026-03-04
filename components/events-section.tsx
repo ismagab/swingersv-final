@@ -1,42 +1,13 @@
-import { useState } from 'react'
-
-// ... dentro del componente:
-const [isZoomed, setIsZoomed] = useState(false)
-
 "use client"
 
 import { CalendarDays, MapPin, Clock, Users } from "lucide-react"
 
 const upcomingEvents = [
   {
-    <div>
-  {/* Imagen pequeña (Miniatura) */}
-  <img 
-    src="/public/images/SwingerSV-fiesta-entre-chicas-2026.jpg" 
-    alt="Afiche del evento"
-    className="w-full max-w-md mx-auto rounded-lg shadow-2xl cursor-pointer transition-transform hover:scale-105"
-    onClick={() => setIsZoomed(true)} 
-  />
-
-  {/* Modal cuando se hace clic (Imagen en grande) */}
-  {isZoomed && (
-    <div 
-      className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 p-4"
-      onClick={() => setIsZoomed(false)}
-    >
-      <img 
-        src="/public/images/SwingerSV-fiesta-entre-chicas-2026.jpg" 
-        className="max-w-full max-h-full rounded-md shadow-white/10 shadow-2xl animate-in zoom-in-95 duration-300" 
-      />
-      <button className="absolute top-5 right-5 text-white text-3xl">&times;</button>
-    </div>
-  )}
-</div>
-
-    title: "Entre Chicas - Reunion de esposas celebrando el dia de la mujer",
-    date: "Sabado 07 de Marzo, 2026",
-    time: "8:00 PM - 2:00 AM",
-    location: "San Salvador",
+    title: "Noche de Parejas - Edicion Gold",
+    date: "Sabado 15 de Marzo, 2026",
+    time: "9:00 PM - 3:00 AM",
+    location: "Zona Exclusiva, San Salvador",
     spots: "Cupos limitados",
     tag: "Proxima",
     highlight: true,
