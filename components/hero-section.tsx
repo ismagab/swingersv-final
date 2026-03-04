@@ -26,13 +26,13 @@ export function HeroSection() {
         {/* Main headline */}
         <h1 className="mb-6 text-4xl font-bold leading-tight tracking-tight text-foreground sm:text-5xl md:text-6xl lg:text-7xl font-[var(--font-playfair)] text-balance">
           Un espacio {" "}
-          <span className="text-primary">seguro</span> y discretos para parejas
+          <span className="text-primary">seguro</span> y discreto para parejas
         </h1>
 
         {/* Subtitle */}
         <p className="mx-auto mb-10 max-w-2xl text-base leading-relaxed text-muted-foreground sm:text-lg">
           Si estás cansado de hablar con perfiles falsos…
-Bienvenido a un lugar donde las parejas sí se conocen cara a cara, no importa tu estatus ni tu fisico, queremos parejas reales como tu.
+Bienvenido a un lugar donde las parejas sí se conocen cara a cara, no importa tu estatus ni tu fisico, queremos parejas reales como tu. Creamos puntos de encuentros para que conozcan parejas salvadoreñas y extranjeros que nos visitan.
         </p>
 
         {/* CTA */}
