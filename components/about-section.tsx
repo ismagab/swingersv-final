@@ -2,28 +2,16 @@ import { Users, MapPin, PartyPopper, ShieldCheck } from "lucide-react"
 
 const features = [
   {
-    icon: Users,
-    title: "Comunidad, no un Club",
-    description:
-      "No somos un club con espacio propio. Somos una comunidad real de parejas que organizan fiestas en diferentes zonas de San Salvador.",
-  },
-  {
-    icon: PartyPopper,
-    title: "Fiestas Exclusivas",
-    description:
-      "Realizamos fiestas privadas en diferentes areas de San Salvador y eventos especiales en la playa, normalmente en San Diego, La Libertad.",
-  },
-  {
     icon: MapPin,
     title: "Ubicacion Confidencial",
     description:
-      "La ubicacion exacta de cada fiesta solo se comparte con las parejas validadas 1 dia antes del evento, por seguridad y discrecion de todos los asistentes.",
+      "La ubicacion exacta de cada fiesta solo se comparte con las parejas validadas o en prevalidacion 1 dia antes de la fiesta o evento, por seguridad y discrecion de todos los asistentes.",
   },
   {
     icon: ShieldCheck,
     title: "Parejas Validadas",
     description:
-      "Cada pareja pasa por un proceso de validacion antes de poder asistir a cualquier evento. Esto garantiza un ambiente seguro y respetuoso para todos.",
+      "Cada pareja pasa por un proceso de validacion antes de poder asistir a cualquier evento. Esto garantiza un ambiente seguro y respetuoso para todos. Nuestro objetivo es que nadie asista coaccionado o por presión",
   },
 ]
 
@@ -47,7 +35,7 @@ export function AboutSection() {
             parejas de mente abierta en El Salvador. No somos un club y no
             contamos con un espacio propio — somos una comunidad que organiza
             fiestas privadas en diferentes puntos de San Salvador y eventos
-            especiales en la playa en San Diego, La Libertad. Todo con total
+            especiales en las playas. Todo con total
             discrecion y seguridad.
           </p>
         </div>
