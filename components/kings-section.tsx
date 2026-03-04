@@ -16,7 +16,7 @@ const kings = [
   {
     id: 2,
     name: "Esposos Axel y Gaby",
-    image: "/images/king22.jpg",
+    image: "/images/king2.jpg",
     electedDate: "Mayo 2024",
     reignUntil: "Septiembre 2025",
     description:
