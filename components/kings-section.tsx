@@ -8,7 +8,7 @@ const kings = [
   {
     id: 1,
     name: "Esposos Rodríguez",
-    image: "/images/king-1.jpg",
+    image: "/images/reyes2025-2026.jpg",
     electedDate: "Septiembre 2025",
     reignUntil: "Septiembre 2026",
     description: "Reconocidos por su carisma y respeto, muy queridos en comunidad.",
