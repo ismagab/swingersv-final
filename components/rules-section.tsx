@@ -29,7 +29,7 @@ const rules = [
     icon: Ban,
     title: "Cero prostitucion",
     description:
-      "No se permite la prostitucion bajo ninguna circunstancia. Todo lo relacionado a SwingerSV es por puro placer y aceptacion mutua de cada pareja o asistente. Quien incumpla sera expulsado permanentemente.",
+      "No se permite la prostitucion bajo ninguna circunstancia. Todo lo relacionado a SwingerSV es por puro placer y aceptacion mutua de cada pareja o asistente.",
   },
 ]
 
@@ -61,9 +61,7 @@ export function RulesSection() {
                   {"De parejas, para parejas: "}
                 </span>
                 SwingerSV es una comunidad donde cada pareja explora a su propio
-                ritmo. Ambos miembros deben estar de acuerdo en participar. No
-                aceptamos personas individuales ni situaciones donde uno de los
-                dos no este comodo.
+                ritmo. Ambos miembros deben estar de acuerdo en participar.
               </p>
             </div>
           </div>
