@@ -15,10 +15,10 @@ const kings = [
   },
   {
     id: 2,
-    name: "Alma Libre",
-    image: "/images/king-2.jpg",
-    electedDate: "Julio 2025",
-    reignUntil: "Diciembre 2025",
+    name: "Esposos Axel y Gaby",
+    image: "/images/king22.jpg",
+    electedDate: "Mayo 2024",
+    reignUntil: "Septiembre 2025",
     description:
       "Embajadores del respeto y la confianza en cada evento.",
   },
