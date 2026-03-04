@@ -11,7 +11,7 @@ const navLinks = [
   { label: "Reglas", href: "#rules" },
   { label: "Reyes", href: "#kings" },
   { label: "Singles", href: "#singles" },
-  { label: "Registro", href: "#contact" },
+  { label: "Prevalidacion", href: "#contact" },
 ]
 
 export function Navbar() {
@@ -85,7 +85,7 @@ export function Navbar() {
                 onClick={() => setOpen(false)}
                 className="block rounded-lg bg-primary px-5 py-3 text-center text-sm font-semibold text-primary-foreground"
               >
-                Registrarse
+                Prevalidacion
               </a>
             </li>
           </ul>
