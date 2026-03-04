@@ -40,7 +40,7 @@ export default function HomePage() {
         <HeroSection />
         <AboutSection />
         <EventsSection />
-        <GallerySection />
+        {/* <GallerySection /> */}
         <RulesSection />
         <PrivacySection />
         <KingsSection />
