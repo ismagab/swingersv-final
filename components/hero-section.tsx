@@ -20,19 +20,19 @@ export function HeroSection() {
       <div className="relative z-10 mx-auto max-w-4xl px-6 text-center">
         {/* Overline */}
         <p className="mb-6 text-xs font-medium uppercase tracking-[0.35em] text-primary">
-          Comunidad Exclusiva para Adultos
+          SwingerSV - De parejas para parejas
         </p>
 
         {/* Main headline */}
         <h1 className="mb-6 text-4xl font-bold leading-tight tracking-tight text-foreground sm:text-5xl md:text-6xl lg:text-7xl font-[var(--font-playfair)] text-balance">
-          Explora tu libertad con{" "}
-          <span className="text-primary">discrecion</span> en El Salvador
+          Un espacio {" "}
+          <span className="text-primary">seguro</span> y discretos para parejas
         </h1>
 
         {/* Subtitle */}
         <p className="mx-auto mb-10 max-w-2xl text-base leading-relaxed text-muted-foreground sm:text-lg">
-          Un espacio seguro, privado y sofisticado para parejas y personas de
-          mente abierta que buscan experiencias unicas.
+          Si estás cansado de hablar con perfiles falsos…
+Bienvenido a un lugar donde las parejas sí se conocen cara a cara, no importa tu estatus ni tu fisico, queremos parejas reales como tu.
         </p>
 
         {/* CTA */}
@@ -41,7 +41,7 @@ export function HeroSection() {
             href="#contact"
             className="inline-flex items-center gap-2 rounded-lg bg-primary px-8 py-4 text-sm font-semibold uppercase tracking-wider text-primary-foreground transition-all hover:opacity-90 hover:shadow-[0_0_30px_rgba(255,204,0,0.3)]"
           >
-            {"Unete a la Comunidad"}
+            {"PREVALIDACION EN SWINGERSV"}
           </a>
           <a
             href="#about"
