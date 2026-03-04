@@ -7,11 +7,11 @@ import { ChevronLeft, ChevronRight, Crown } from "lucide-react"
 const kings = [
   {
     id: 1,
-    name: "Los Elegidos",
+    name: "Esposos Rodríguez",
     image: "/images/king-1.jpg",
-    electedDate: "Enero 2026",
-    reignUntil: "Junio 2026",
-    description: "Reconocidos por su carisma y respeto hacia toda la comunidad.",
+    electedDate: "Septiembre 2025",
+    reignUntil: "Septiembre 2026",
+    description: "Reconocidos por su carisma y respeto, muy queridos en comunidad.",
   },
   {
     id: 2,
