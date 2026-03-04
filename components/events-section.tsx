@@ -4,30 +4,30 @@ import { CalendarDays, MapPin, Clock, Users } from "lucide-react"
 
 const upcomingEvents = [
   {
-    title: "Noche de Parejas - Edicion Gold",
-    date: "Sabado 15 de Marzo, 2026",
-    time: "9:00 PM - 3:00 AM",
-    location: "Zona Exclusiva, San Salvador",
-    spots: "Cupos limitados",
+    title: "Entre Chicas - Reunion de esposas celebrando el dia de la mujer",
+    date: "Sabado 07 de Marzo, 2026",
+    time: "8:00 PM - 2:00 AM",
+    location: "San Salvador",
+    spots: "Acceso libre",
     tag: "Proxima",
     highlight: true,
   },
   {
-    title: "Pool Party Privada",
-    date: "Sabado 29 de Marzo, 2026",
-    time: "2:00 PM - 10:00 PM",
-    location: "San Diego, La Libertad",
+    title: "Fiesta Disco SwingerSV",
+    date: "Sabado 21 de Marzo, 2026",
+    time: "8:00 PM - 02:00 AM",
+    location: "Colonia Escalón,San Salvador",
     spots: "Cupos limitados",
-    tag: "Playa",
+    tag: "Fiesta",
     highlight: false,
   },
   {
-    title: "Noche Sensual - Abril",
-    date: "Sabado 12 de Abril, 2026",
-    time: "9:00 PM - 3:00 AM",
-    location: "Zona Exclusiva, San Salvador",
+    title: "Evento Pool Party",
+    date: "Sabado 18 de Abril, 2026",
+    time: "5:00 PM - 2:00 PM",
+    location: "Playa San Diego, La Libertad",
     spots: "Cupos limitados",
-    tag: "Especial",
+    tag: "Evento",
     highlight: false,
   },
 ]
@@ -117,7 +117,7 @@ export function EventsSection() {
           <p className="text-xs leading-relaxed text-muted-foreground">
             <span className="font-semibold text-primary">Nota importante:</span>{" "}
             La ubicacion exacta de cada fiesta se envia unicamente a las parejas
-            validadas, 1 dia antes del evento. Esto garantiza la seguridad y
+            validadas, 1 dia antes de la fiesta o evento. Esto garantiza la seguridad y
             discrecion de todos los asistentes.
           </p>
         </div>
