@@ -6,6 +6,7 @@ import { GallerySection } from "@/components/gallery-section"
 import { RulesSection } from "@/components/rules-section"
 import { PrivacySection } from "@/components/privacy-section"
 import { KingsSection } from "@/components/kings-section"
+import { HostSection } from "@/components/host-section"
 import { SinglesSection } from "@/components/singles-section"
 import { ContactSection } from "@/components/contact-section"
 import { SiteFooter } from "@/components/site-footer"
@@ -44,6 +45,7 @@ export default function HomePage() {
         <RulesSection />
         <PrivacySection />
         <KingsSection />
+        <HostSection />
         <SinglesSection />
         <ContactSection />
         <SiteFooter />
