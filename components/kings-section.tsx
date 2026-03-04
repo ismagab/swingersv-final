@@ -24,29 +24,20 @@ const kings = [
   },
   {
     id: 3,
-    name: "Los Dorados",
-    image: "/images/king-3.jpg",
-    electedDate: "Enero 2025",
-    reignUntil: "Junio 2025",
+    name: "Esposos R y K",
+    image: "/images/king3.jpg",
+    electedDate: "Mayo 2023",
+    reignUntil: "Mayo 2024",
     description:
       "Pioneros en fortalecer los lazos de la comunidad SwingerSV.",
   },
   {
     id: 4,
-    name: "Fuego & Hielo",
-    image: "/images/king-4.jpg",
-    electedDate: "Julio 2024",
-    reignUntil: "Diciembre 2024",
+    name: "Esposos SanSan",
+    image: "/images/king4.jpg",
+    electedDate: "Abril 2022",
+    reignUntil: "Mayo 2023",
     description: "Su energia y entusiasmo marcaron un antes y un despues.",
-  },
-  {
-    id: 5,
-    name: "Los Fundadores",
-    image: "/images/king-5.jpg",
-    electedDate: "Enero 2024",
-    reignUntil: "Junio 2024",
-    description:
-      "Los primeros reyes de SwingerSV, quienes sentaron las bases del respeto.",
   },
 ]
 
@@ -73,7 +64,7 @@ export function KingsSection() {
         <div className="mx-auto mb-16 max-w-2xl text-center">
           <p className="mb-4 flex items-center justify-center gap-2 text-xs font-medium uppercase tracking-[0.35em] text-primary">
             <Crown className="h-4 w-4" />
-            Salon de Reyes
+            Salon de Reyes SwingerSV 
           </p>
           <h2 className="mb-6 text-3xl font-bold tracking-tight text-foreground sm:text-4xl font-[var(--font-playfair)] text-balance">
             Los Reyes de SwingerSV
