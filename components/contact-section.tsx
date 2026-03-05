@@ -21,7 +21,6 @@ export function ContactSection() {
     const form = e.currentTarget
     const formData = new FormData(form)
 
-    // Extraemos los datos usando los nombres exactos de tu formulario
     const payload = {
       name1: formData.get("name1"),
       name2: formData.get("name2"),
@@ -36,8 +35,8 @@ export function ContactSection() {
       socialMedia: formData.get("social-media"),
     }
 
-    // Construimos el mensaje con formato para WhatsApp
-    const textoMensaje = `*Nueva Solicitud de Pareja - SwingerSV*%0A%0A` +
+    const textoMensaje =
+      `*Nueva Solicitud de Pareja - SwingerSV*%0A%0A` +
       `*Persona 1:* ${payload.name1} (${payload.age1} años)%0A` +
       `*Persona 2:* ${payload.name2} (${payload.age2} años)%0A` +
       `*WhatsApp 1:* ${payload.whatsapp1}%0A` +
@@ -46,24 +45,20 @@ export function ContactSection() {
       `*Fantasías:* ${payload.fantasies}%0A` +
       `*Examen ETS:* ${payload.etsExam}%0A` +
       `*Compromiso salud:* ${payload.healthCommitment}%0A` +
-      `*Redes:* ${payload.socialMedia}`;
+      `*Redes:* ${payload.socialMedia || "No indicaron"}`
 
-    // Tu número configurado
-    const miNumero = "50369207547"; 
-    const whatsappUrl = `https://wa.me/${miNumero}?text=${textoMensaje}`;
+    const miNumero = "50369207547"
+    const whatsappUrl = `https://wa.me/${miNumero}?text=${textoMensaje}`
 
     try {
-      // Abre WhatsApp en una nueva pestaña
-      window.open(whatsappUrl, '_blank');
-      // Cambia la vista del formulario al mensaje de éxito que tienes en la línea 84
-      setSubmitted(true); 
+      window.open(whatsappUrl, "_blank")
+      setSubmitted(true)
     } catch (err) {
-      setError("No se pudo abrir WhatsApp. Por favor, intenta de nuevo.");
+      setError("No se pudo abrir WhatsApp. Por favor, intenta de nuevo.")
     } finally {
-      setLoading(false);
+      setLoading(false)
     }
   }
-
 
   return (
     <section id="contact" className="relative py-24 sm:py-32">
@@ -76,34 +71,36 @@ export function ContactSection() {
             Registro de Parejas
           </p>
           <h2 className="mb-6 text-3xl font-bold tracking-tight text-foreground sm:text-4xl font-[var(--font-playfair)] text-balance">
-            {"Quieren ser parte de la comunidad?"}
+            ¿Quieren ser parte de la comunidad?
           </h2>
           <p className="leading-relaxed text-muted-foreground">
-            Completen el siguiente formulario como pareja. Toda la informacion
-            sera enviada de forma privada a nuestro equipo. Nos comunicaremos
+            Completen el siguiente formulario como pareja. Toda la información
+            será enviada de forma privada a nuestro equipo. Nos comunicaremos
             por WhatsApp.
           </p>
         </div>
 
         {/* Form */}
         {submitted ? (
-          <div className="rounded-xl border border-primary/30 bg-primary/5 p-12 text-center">
-            <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-primary/10">
+          <div className="rounded-xl border-2 border-primary bg-primary/5 p-12 text-center"
+            style={{ boxShadow: "0 0 30px 6px rgba(255,204,0,0.25), 0 0 80px 20px rgba(255,204,0,0.10)" }}>
+            <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-primary/20">
               <Send className="h-6 w-6 text-primary" />
             </div>
             <h3 className="mb-2 text-xl font-semibold text-foreground">
-              {"Solicitud enviada"}
+              ¡Solicitud enviada!
             </h3>
             <p className="text-sm text-muted-foreground">
-              Gracias por su interes. Revisaremos su solicitud y nos
-              comunicaremos por WhatsApp de forma discreta en las proximas 24-48
+              Gracias por su interés. Revisaremos su solicitud y nos
+              comunicaremos por WhatsApp de forma discreta en las próximas 24-48
               horas.
             </p>
           </div>
         ) : (
           <form
             onSubmit={handleSubmit}
-            className="rounded-xl border border-border/60 bg-card p-8 sm:p-10"
+            className="rounded-xl border-2 border-primary bg-card p-8 sm:p-10"
+            style={{ boxShadow: "0 0 30px 6px rgba(255,204,0,0.25), 0 0 80px 20px rgba(255,204,0,0.10)" }}
           >
             {/* Section: Datos de la pareja */}
             <div className="mb-8">
@@ -113,124 +110,66 @@ export function ContactSection() {
               <p className="mb-6 text-xs text-muted-foreground">
                 Necesitamos los datos de ambos miembros de la pareja.
               </p>
-
               <div className="grid gap-6 sm:grid-cols-2">
                 <div className="flex flex-col gap-2">
-                  <label htmlFor="name1" className={labelClasses}>
-                    {"Nombre completo — Persona 1"}
-                  </label>
-                  <input
-                    id="name1"
-                    name="name1"
-                    type="text"
-                    required
-                    placeholder="Nombre completo"
-                    className={inputClasses}
-                  />
+                  <label htmlFor="name1" className={labelClasses}>Nombre completo — Persona 1</label>
+                  <input id="name1" name="name1" type="text" required placeholder="Nombre completo" className={inputClasses} />
                 </div>
                 <div className="flex flex-col gap-2">
-                  <label htmlFor="name2" className={labelClasses}>
-                    {"Nombre completo — Persona 2"}
-                  </label>
-                  <input
-                    id="name2"
-                    name="name2"
-                    type="text"
-                    required
-                    placeholder="Nombre completo"
-                    className={inputClasses}
-                  />
+                  <label htmlFor="name2" className={labelClasses}>Nombre completo — Persona 2</label>
+                  <input id="name2" name="name2" type="text" required placeholder="Nombre completo" className={inputClasses} />
                 </div>
                 <div className="flex flex-col gap-2">
-                  <label htmlFor="whatsapp1" className={labelClasses}>
-                    {"WhatsApp — Persona 1"}
-                  </label>
-                  <input
-                    id="whatsapp1"
-                    name="whatsapp1"
-                    type="tel"
-                    required
-                    placeholder="+503 0000-0000"
-                    className={inputClasses}
-                  />
+                  <label htmlFor="whatsapp1" className={labelClasses}>WhatsApp — Persona 1</label>
+                  <input id="whatsapp1" name="whatsapp1" type="tel" required placeholder="+503 0000-0000" className={inputClasses} />
                 </div>
                 <div className="flex flex-col gap-2">
-                  <label htmlFor="whatsapp2" className={labelClasses}>
-                    {"WhatsApp — Persona 2"}
-                  </label>
-                  <input
-                    id="whatsapp2"
-                    name="whatsapp2"
-                    type="tel"
-                    required
-                    placeholder="+503 0000-0000"
-                    className={inputClasses}
-                  />
+                  <label htmlFor="whatsapp2" className={labelClasses}>WhatsApp — Persona 2</label>
+                  <input id="whatsapp2" name="whatsapp2" type="tel" required placeholder="+503 0000-0000" className={inputClasses} />
                 </div>
                 <div className="flex flex-col gap-2">
-                  <label htmlFor="age1" className={labelClasses}>
-                    {"Edad — Persona 1"}
-                  </label>
-                  <input
-                    id="age1"
-                    name="age1"
-                    type="number"
-                    min={18}
-                    required
-                    placeholder="18+"
-                    className={inputClasses}
-                  />
+                  <label htmlFor="age1" className={labelClasses}>Edad — Persona 1</label>
+                  <input id="age1" name="age1" type="number" min={18} required placeholder="18+" className={inputClasses} />
                 </div>
                 <div className="flex flex-col gap-2">
-                  <label htmlFor="age2" className={labelClasses}>
-                    {"Edad — Persona 2"}
-                  </label>
-                  <input
-                    id="age2"
-                    name="age2"
-                    type="number"
-                    min={18}
-                    required
-                    placeholder="18+"
-                    className={inputClasses}
-                  />
+                  <label htmlFor="age2" className={labelClasses}>Edad — Persona 2</label>
+                  <input id="age2" name="age2" type="number" min={18} required placeholder="18+" className={inputClasses} />
                 </div>
               </div>
             </div>
 
-            {/* Section: Relacion */}
+            {/* Section: Relación */}
             <div className="mb-8 border-t border-border/40 pt-8">
               <h3 className="mb-1 text-sm font-semibold text-primary uppercase tracking-wider">
-                Sobre su Relacion
+                Sobre su Relación
               </h3>
               <p className="mb-6 text-xs text-muted-foreground">
                 Queremos conocerlos mejor como pareja.
               </p>
-
               <div className="grid gap-6">
                 <div className="flex flex-col gap-2">
                   <label htmlFor="relationship-time" className={labelClasses}>
-                    {"Cuanto tiempo llevan de relacion o matrimonio?"}
+                    ¿Cuánto tiempo llevan de relación o matrimonio?
                   </label>
                   <input
                     id="relationship-time"
                     name="relationship-time"
                     type="text"
                     required
-                    placeholder="Ej: 3 anos de matrimonio, 5 anos de relacion..."
+                    placeholder="Ej: 3 años de matrimonio, 5 años de relación..."
                     className={inputClasses}
                   />
                 </div>
                 <div className="flex flex-col gap-2">
                   <label htmlFor="fantasies" className={labelClasses}>
-                    {"Mencione cuales son las fantasias ya cumplidas o si son nuevos en el ambiente"}
+                    ¿Cuáles son las fantasías ya cumplidas o son nuevos en el ambiente?
                   </label>
                   <textarea
                     id="fantasies"
                     name="fantasies"
                     rows={3}
                     required
-                    placeholder="Cuentenos si ya tienen experiencia en el ambiente swinger o si son nuevos. Mencionen fantasias cumplidas si aplica..."
+                    placeholder="Cuéntenos si ya tienen experiencia en el ambiente swinger o si son nuevos. Mencionen fantasías cumplidas si aplica..."
                     className={`${inputClasses} resize-none`}
                   />
                 </div>
@@ -245,11 +184,10 @@ export function ContactSection() {
               <p className="mb-6 text-xs text-muted-foreground">
                 La salud es prioridad para toda la comunidad.
               </p>
-
               <div className="grid gap-6">
                 <div className="flex flex-col gap-2">
                   <label htmlFor="ets-exam" className={labelClasses}>
-                    {"Ultimo examen de ETS (publicar el mes y ano)"}
+                    Último examen de ETS (indicar el mes y año)
                   </label>
                   <input
                     id="ets-exam"
@@ -261,11 +199,8 @@ export function ContactSection() {
                   />
                 </div>
                 <div className="flex flex-col gap-2">
-                  <label
-                    htmlFor="health-commitment"
-                    className={labelClasses}
-                  >
-                    {"Si no se han realizado examenes, estarian dispuestos a cuidar su salud sexual y la del ambiente?"}
+                  <label htmlFor="health-commitment" className={labelClasses}>
+                    ¿Están dispuestos a cuidar su salud sexual y la del ambiente?
                   </label>
                   <select
                     id="health-commitment"
@@ -274,38 +209,31 @@ export function ContactSection() {
                     className={inputClasses}
                     defaultValue=""
                   >
-                    <option value="" disabled>
-                      Seleccionen una opcion
-                    </option>
-                    <option value="si">
-                      {"Si, estamos dispuestos a realizarnos examenes"}
-                    </option>
-                    <option value="ya-tenemos">
-                      Ya contamos con examenes recientes
-                    </option>
+                    <option value="" disabled>Seleccionen una opción</option>
+                    <option value="si">Sí, estamos dispuestos a realizarnos exámenes</option>
+                    <option value="ya-tenemos">Ya contamos con exámenes recientes</option>
                   </select>
                 </div>
               </div>
             </div>
 
-            {/* Section: Redes sociales */}
+            {/* Section: Redes sociales — opcional */}
             <div className="mb-8 border-t border-border/40 pt-8">
               <h3 className="mb-1 text-sm font-semibold text-primary uppercase tracking-wider">
-                Redes Sociales
+                Redes Sociales <span className="text-muted-foreground normal-case font-normal">(opcional)</span>
               </h3>
               <p className="mb-6 text-xs text-muted-foreground">
                 Si tienen perfiles de pareja swinger, compartan sus redes.
               </p>
-
               <div className="flex flex-col gap-2">
                 <label htmlFor="social-media" className={labelClasses}>
-                  Escriba sus redes sociales de parejas swinger
+                  Redes sociales de pareja swinger
                 </label>
                 <textarea
                   id="social-media"
                   name="social-media"
                   rows={2}
-                  placeholder="Ej: Instagram @pareja_sv, Telegram, SDC, etc. Si no tienen, escriban 'Ninguna'"
+                  placeholder="Ej: Instagram @pareja_sv, Telegram, SDC, etc. Si no tienen, dejen en blanco."
                   className={`${inputClasses} resize-none`}
                 />
               </div>
@@ -321,11 +249,8 @@ export function ContactSection() {
                     required
                     className="mt-1 h-4 w-4 rounded border-border accent-primary shrink-0"
                   />
-                  <label
-                    htmlFor="mutual-consent"
-                    className="text-xs leading-relaxed text-muted-foreground"
-                  >
-                    Confirmamos que ambos miembros de la pareja estan de acuerdo
+                  <label htmlFor="mutual-consent" className="text-xs leading-relaxed text-muted-foreground">
+                    Confirmamos que ambos miembros de la pareja están de acuerdo
                     en participar en las actividades de SwingerSV de forma libre
                     y voluntaria.
                   </label>
@@ -337,19 +262,16 @@ export function ContactSection() {
                     required
                     className="mt-1 h-4 w-4 rounded border-border accent-primary shrink-0"
                   />
-                  <label
-                    htmlFor="age-consent"
-                    className="text-xs leading-relaxed text-muted-foreground"
-                  >
-                    Confirmamos que ambos somos mayores de 18 anos y aceptamos
+                  <label htmlFor="age-consent" className="text-xs leading-relaxed text-muted-foreground">
+                    Confirmamos que ambos somos mayores de 18 años y aceptamos
                     las reglas de la comunidad, incluyendo que NO es NO, que cada
-                    pareja va a su ritmo y que no se permite la prostitucion.
+                    pareja va a su ritmo y que no se permite la prostitución.
                   </label>
                 </div>
               </div>
             </div>
 
-            {/* Error message */}
+            {/* Error */}
             {error && (
               <div className="mt-4 rounded-lg border border-destructive/30 bg-destructive/5 p-3 text-center text-sm text-destructive-foreground">
                 {error}
