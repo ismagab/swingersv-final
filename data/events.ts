@@ -46,7 +46,7 @@ export const events: Event[] = [
     location: "San Salvador",
     locationFull: "San Salvador, El Salvador",
     spots: "Acceso libre",
-    image: "SwingerSV-entre-chicas-2026.jpg",
+    image: "SwingerSV-fiesta-entre-chicas-2026.jpg",
     highlight: true,
     whatsappText: "Somos%20parejas%20y%20nos%20gustar%C3%ADa%20saber%20m%C3%A1s%20sobre%20el%20evento%20Entre%20Chicas%20del%207%20de%20Marzo",
   },
