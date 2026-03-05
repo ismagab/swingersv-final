@@ -47,6 +47,7 @@ export default function HomePage() {
         <KingsSection />
         <HostSection />
         <SinglesSection />
+        <FaqSection />
         <ContactSection />
         <SiteFooter />
         <WhatsAppButton />
