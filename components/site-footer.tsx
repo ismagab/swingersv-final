@@ -119,17 +119,19 @@ export function SiteFooter() {
 
           {/* Legal */}
           <div className="mt-6 flex flex-wrap justify-center gap-6 sm:justify-start">
-            {["Términos de Uso", "Política de Privacidad", "Aviso Legal"].map(
-              (legal) => (
-                <a
-                  key={legal}
-                  href="#"
-                  className="text-xs text-muted-foreground transition-colors hover:text-primary"
-                >
-                  {legal}
-                </a>
-              )
-            )}
+            {[
+              { label: "Términos de Uso", href: "/terminos-de-uso" },
+              { label: "Política de Privacidad", href: "/politica-de-privacidad" },
+              { label: "Aviso Legal", href: "/aviso-legal" },
+            ].map((legal) => (
+              <Link
+                key={legal.href}
+                href={legal.href}
+                className="text-xs text-muted-foreground transition-colors hover:text-primary"
+              >
+                {legal.label}
+              </Link>
+            ))}
           </div>
         </div>
       </div>
