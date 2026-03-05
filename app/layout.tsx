@@ -38,7 +38,7 @@ export const metadata: Metadata = {
     description:
       'La comunidad swinger más exclusiva y discreta de El Salvador. Fiestas privadas, tríos, HotWife, unicornios y lifestyle en San Salvador y La Libertad.',
     images: [{
-      url: 'https://www.swingersv.com/images/logo.png',
+      url: 'https://www.swingersv.com/images/og-image.jpg',
       width: 1200, height: 630,
       alt: 'SwingerSV - De Parejas Para Parejas',
       type: 'image/png',
@@ -50,7 +50,7 @@ export const metadata: Metadata = {
     creator: '@swinger_sv',
     title: 'SwingerSV — Comunidad Swinger en El Salvador',
     description: 'Fiestas swinger privadas en San Salvador y La Libertad. Tríos, HotWife, unicornios y lifestyle.',
-    images: ['https://www.swingersv.com/images/logo.png'],
+    images: ['https://www.swingersv.com/images/og-image.jpg'],
   },
   robots: {
     index: true, follow: true,
