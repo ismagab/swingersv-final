@@ -1,24 +1,23 @@
-import { Users, MapPin, PartyPopper, ShieldCheck } from "lucide-react"
+import { MapPin, ShieldCheck } from "lucide-react"
 
 const features = [
   {
     icon: MapPin,
-    title: "Ubicacion Confidencial",
+    title: "Ubicación Confidencial",
     description:
-      "La ubicacion exacta de cada fiesta solo se comparte con las parejas validadas o en prevalidacion 1 dia antes de la fiesta o evento, por seguridad y discrecion de todos los asistentes.",
+      "La ubicación exacta de cada fiesta solo se comparte con las parejas validadas o en prevalidación 1 día antes de la fiesta o evento, por seguridad y discreción de todos los asistentes.",
   },
   {
     icon: ShieldCheck,
     title: "Parejas Validadas",
     description:
-      "Cada pareja pasa por un proceso de validacion antes de poder asistir a cualquier evento. Esto garantiza un ambiente seguro y respetuoso para todos. Nuestro objetivo es que nadie asista coaccionado o por presión",
+      "Cada pareja pasa por un proceso de validación antes de poder asistir a cualquier evento. Esto garantiza un ambiente seguro y respetuoso para todos. Nuestro objetivo es que nadie asista coaccionado o por presión.",
   },
 ]
 
 export function AboutSection() {
   return (
     <section id="about" className="relative py-24 sm:py-32">
-      {/* Subtle top border glow */}
       <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent" />
 
       <div className="mx-auto max-w-7xl px-6">
@@ -31,17 +30,16 @@ export function AboutSection() {
             Una comunidad de parejas para parejas
           </h2>
           <p className="leading-relaxed text-muted-foreground">
-            SwingerSV nacio de la necesidad de crear una comunidad genuina para
+            SwingerSV nació de la necesidad de crear una comunidad genuina para
             parejas de mente abierta en El Salvador. No somos un club y no
             contamos con un espacio propio — somos una comunidad que organiza
             fiestas privadas en diferentes puntos de San Salvador y eventos
-            especiales en las playas. Todo con total
-            discrecion y seguridad.
+            especiales en las playas. Todo con total discreción y seguridad.
           </p>
         </div>
 
         {/* Feature grid */}
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="grid gap-6 sm:grid-cols-2">
           {features.map((feature) => (
             <div
               key={feature.title}

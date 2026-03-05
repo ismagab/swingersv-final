@@ -2,7 +2,7 @@ import { UserCheck, Users, Star, ShieldCheck } from "lucide-react"
 
 const WHATSAPP_NUMBER = "50369207547"
 const UNICORN_MESSAGE =
-  "Hola, soy mujer soltera (Unicornio) y me gustaria saber mas sobre SwingerSV"
+  "Hola, soy mujer soltera (Unicornio) y me gustaría saber más sobre SwingerSV"
 const UNICORN_URL = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(UNICORN_MESSAGE)}`
 
 export function SinglesSection() {
@@ -17,12 +17,12 @@ export function SinglesSection() {
             Singles y Unicornios
           </p>
           <h2 className="mb-6 text-3xl font-bold tracking-tight text-foreground sm:text-4xl font-[var(--font-playfair)] text-balance">
-            {"Tambien hay espacio para ti"}
+            También hay espacio para ti
           </h2>
           <p className="leading-relaxed text-muted-foreground">
             Aunque SwingerSV es de parejas para parejas, entendemos que el
             ambiente swinger incluye a personas individuales que comparten
-            nuestros valores de respeto y discrecion.
+            nuestros valores de respeto y discreción.
           </p>
         </div>
 
@@ -47,9 +47,9 @@ export function SinglesSection() {
                 </div>
                 <p className="text-sm leading-relaxed text-muted-foreground">
                   <span className="font-semibold text-foreground">
-                    Invitacion de una pareja:{" "}
+                    Invitación de una pareja:{" "}
                   </span>
-                  Un single puede asistir unicamente si una pareja activa de la
+                  Un single puede asistir únicamente si una pareja activa de la
                   comunidad lo invita.
                 </p>
               </div>
@@ -59,7 +59,7 @@ export function SinglesSection() {
                 </div>
                 <p className="text-sm leading-relaxed text-muted-foreground">
                   <span className="font-semibold text-foreground">
-                    Validacion por 3 parejas:{" "}
+                    Validación por 3 parejas:{" "}
                   </span>
                   Si 3 parejas validadas de la comunidad recomiendan a un
                   single, este obtiene libre acceso a las fiestas porque se ha
@@ -109,7 +109,7 @@ export function SinglesSection() {
             </p>
 
             <p className="mb-8 text-sm leading-relaxed text-muted-foreground">
-              Solo necesitan completar un proceso simple de validacion para
+              Solo necesitan completar un proceso simple de validación para
               garantizar la seguridad de todos. Las mismas reglas de oro aplican
               para ellas: respeto, consentimiento y libertad.
             </p>
@@ -135,7 +135,7 @@ export function SinglesSection() {
                   fill="#fff"
                 />
               </svg>
-              Escribenos por WhatsApp
+              Escríbenos por WhatsApp
             </a>
           </div>
         </div>

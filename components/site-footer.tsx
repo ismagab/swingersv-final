@@ -10,14 +10,14 @@ export function SiteFooter() {
             <div className="mb-4">
               <Image
                 src="/images/logo.png"
-                alt="SwingerSV - De Parejas Para Parejas"
+                alt="SwingerSV - De Parejas Para Parejas — Comunidad Swinger en El Salvador"
                 width={200}
                 height={80}
                 className="h-16 w-auto"
               />
             </div>
             <p className="max-w-sm text-sm leading-relaxed text-muted-foreground">
-              La comunidad mas exclusiva y discreta para adultos de mente
+              La comunidad más exclusiva y discreta para adultos de mente
               abierta en El Salvador. Explora, conecta y disfruta con total
               privacidad.
             </p>
@@ -26,7 +26,7 @@ export function SiteFooter() {
           {/* Links */}
           <div>
             <h4 className="mb-4 text-xs font-semibold uppercase tracking-wider text-primary">
-              Navegacion
+              Navegación
             </h4>
             <ul className="flex flex-col gap-3">
               {[
@@ -67,7 +67,7 @@ export function SiteFooter() {
               <span>@swinger_sv</span>
             </a>
             <p className="mt-4 text-xs leading-relaxed text-muted-foreground">
-              Siguenos en X para enterarte de las proximas fiestas y novedades
+              Síguenos en X para enterarte de las próximas fiestas y novedades
               de la comunidad.
             </p>
           </div>
@@ -82,7 +82,7 @@ export function SiteFooter() {
                 +18
               </span>
               <p className="text-xs text-muted-foreground">
-                Este sitio es exclusivamente para personas mayores de 18 anos.
+                Este sitio es exclusivamente para personas mayores de 18 años.
               </p>
             </div>
 
@@ -94,7 +94,7 @@ export function SiteFooter() {
 
           {/* Legal */}
           <div className="mt-6 flex flex-wrap justify-center gap-6 sm:justify-start">
-            {["Terminos de Uso", "Politica de Privacidad", "Aviso Legal"].map(
+            {["Términos de Uso", "Política de Privacidad", "Aviso Legal"].map(
               (legal) => (
                 <a
                   key={legal}

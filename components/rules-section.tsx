@@ -5,31 +5,31 @@ const rules = [
     icon: ShieldCheck,
     title: "NO es NO",
     description:
-      "El consentimiento es sagrado. Un 'no' se respeta siempre, sin excepciones, sin presiones y sin insistencias. Cualquier violacion a esta regla significa expulsion inmediata.",
+      "El consentimiento es sagrado. Un 'no' se respeta siempre, sin excepciones, sin presiones y sin insistencias. Cualquier violación a esta regla significa expulsión inmediata.",
   },
   {
     icon: Users,
     title: "De parejas, para parejas",
     description:
-      "SwingerSV es una comunidad exclusiva de parejas para parejas. Buscamos que ambos miembros de cada pareja esten de acuerdo y disfruten de esta experiencia juntos.",
+      "SwingerSV es una comunidad exclusiva de parejas para parejas. Buscamos que ambos miembros de cada pareja estén de acuerdo y disfruten de esta experiencia juntos.",
   },
   {
     icon: Heart,
     title: "Cada pareja va a su ritmo",
     description:
-      "No hay presiones de nadie. Cada pareja decide hasta donde quiere llegar, a que ritmo y con quien. Respetamos los limites y tiempos de todos.",
+      "No hay presiones de nadie. Cada pareja decide hasta dónde quiere llegar, a qué ritmo y con quién. Respetamos los límites y tiempos de todos.",
   },
   {
     icon: HandHeart,
-    title: "Sexualidad libre y sin coaccion",
+    title: "Sexualidad libre y sin coacción",
     description:
-      "Buscamos parejas que quieran disfrutar de su sexualidad de forma libre, consensuada y sin coaccion de nadie. La confianza y el respeto mutuo son la base de todo.",
+      "Buscamos parejas que quieran disfrutar de su sexualidad de forma libre, consensuada y sin coacción de nadie. La confianza y el respeto mutuo son la base de todo.",
   },
   {
     icon: Ban,
-    title: "Cero prostitucion",
+    title: "Cero prostitución",
     description:
-      "No se permite la prostitucion bajo ninguna circunstancia. Todo lo relacionado a SwingerSV es por puro placer y aceptacion mutua de cada pareja o asistente.",
+      "No se permite la prostitución bajo ninguna circunstancia. Todo lo relacionado a SwingerSV es por puro placer y aceptación mutua de cada pareja o asistente.",
   },
 ]
 
@@ -50,8 +50,8 @@ export function RulesSection() {
             </h2>
             <p className="mb-8 leading-relaxed text-muted-foreground">
               En SwingerSV la base de todo es el respeto mutuo. Estas reglas no
-              son negociables y se aplican a todos los miembros sin excepcion.
-              Quien no las cumpla sera removido permanentemente de la comunidad.
+              son negociables y se aplican a todos los miembros sin excepción.
+              Quien no las cumpla será removido permanentemente de la comunidad.
             </p>
 
             {/* Highlight box */}

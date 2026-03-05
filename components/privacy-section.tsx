@@ -3,9 +3,9 @@ import { Lock, Eye, MapPin, UserCheck } from "lucide-react"
 const protocols = [
   {
     icon: Lock,
-    title: "Discrecion Total",
+    title: "Discreción Total",
     description:
-      "No almacenamos informacion personal en el sitio web. Tu privacidad esta protegida porque simplemente no guardamos datos sensibles en linea.",
+      "No almacenamos información personal en el sitio web. Tu privacidad está protegida porque simplemente no guardamos datos sensibles en línea.",
   },
   {
     icon: Eye,
@@ -15,15 +15,15 @@ const protocols = [
   },
   {
     icon: MapPin,
-    title: "Ubicacion Confidencial",
+    title: "Ubicación Confidencial",
     description:
-      "La direccion del evento se comparte solo con parejas validadas, 1 dia antes. Esto protege tanto el lugar como a todos los asistentes.",
+      "La dirección del evento se comparte solo con parejas validadas, 1 día antes. Esto protege tanto el lugar como a todos los asistentes.",
   },
   {
     icon: UserCheck,
-    title: "Validacion de Parejas",
+    title: "Validación de Parejas",
     description:
-      "Cada pareja pasa por un proceso de validacion previo para garantizar que todos los asistentes son personas reales y de confianza.",
+      "Cada pareja pasa por un proceso de validación previo para garantizar que todos los asistentes son personas reales y de confianza.",
   },
 ]
 
@@ -37,15 +37,15 @@ export function PrivacySection() {
           {/* Left — copy */}
           <div>
             <p className="mb-4 text-xs font-medium uppercase tracking-[0.35em] text-primary">
-              Seguridad y Discrecion
+              Seguridad y Discreción
             </p>
             <h2 className="mb-6 text-3xl font-bold tracking-tight text-foreground sm:text-4xl font-[var(--font-playfair)] text-balance">
               Tu privacidad es nuestra prioridad
             </h2>
             <p className="mb-8 leading-relaxed text-muted-foreground">
-              Entendemos que la discrecion es fundamental para nuestra comunidad.
-              No almacenamos informacion personal en este sitio web. Todo el
-              proceso de validacion y comunicacion se maneja de forma directa y
+              Entendemos que la discreción es fundamental para nuestra comunidad.
+              No almacenamos información personal en este sitio web. Todo el
+              proceso de validación y comunicación se maneja de forma directa y
               privada para proteger a todos nuestros miembros.
             </p>
 
@@ -56,7 +56,7 @@ export function PrivacySection() {
                   {"Compromiso de cero tolerancia: "}
                 </span>
                 Cualquier persona que tome fotos, videos, o que intente
-                comprometer la privacidad de otro miembro sera expulsada de forma
+                comprometer la privacidad de otro miembro será expulsada de forma
                 inmediata y permanente de la comunidad.
               </p>
             </div>

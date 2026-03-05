@@ -11,7 +11,7 @@ const kings = [
     image: "/images/king1.jpg",
     electedDate: "Septiembre 2025",
     reignUntil: "Septiembre 2026",
-    description: "Reconocidos por su carisma y respeto, muy queridos en comunidad.",
+    description: "Reconocidos por su carisma y respeto, muy queridos en la comunidad.",
   },
   {
     id: 2,
@@ -19,8 +19,7 @@ const kings = [
     image: "/images/king2.jpg",
     electedDate: "Mayo 2024",
     reignUntil: "Septiembre 2025",
-    description:
-      "Embajadores del respeto y la confianza en cada evento.",
+    description: "Embajadores del respeto y la confianza en cada evento.",
   },
   {
     id: 3,
@@ -28,8 +27,7 @@ const kings = [
     image: "/images/king3.jpg",
     electedDate: "Mayo 2023",
     reignUntil: "Mayo 2024",
-    description:
-      "Pioneros en fortalecer los lazos de la comunidad SwingerSV.",
+    description: "Pioneros en fortalecer los lazos de la comunidad SwingerSV.",
   },
   {
     id: 4,
@@ -37,21 +35,18 @@ const kings = [
     image: "/images/king4.jpg",
     electedDate: "Abril 2022",
     reignUntil: "Mayo 2023",
-    description: "Su energia y entusiasmo marcaron un antes y un despues.",
+    description: "Su energía y entusiasmo marcaron un antes y un después.",
   },
 ]
 
 export function KingsSection() {
   const [current, setCurrent] = useState(0)
 
-  const goTo = useCallback(
-    (index: number) => {
-      if (index < 0) setCurrent(kings.length - 1)
-      else if (index >= kings.length) setCurrent(0)
-      else setCurrent(index)
-    },
-    []
-  )
+  const goTo = useCallback((index: number) => {
+    if (index < 0) setCurrent(kings.length - 1)
+    else if (index >= kings.length) setCurrent(0)
+    else setCurrent(index)
+  }, [])
 
   const king = kings[current]
 
@@ -64,7 +59,7 @@ export function KingsSection() {
         <div className="mx-auto mb-16 max-w-2xl text-center">
           <p className="mb-4 flex items-center justify-center gap-2 text-xs font-medium uppercase tracking-[0.35em] text-primary">
             <Crown className="h-4 w-4" />
-            Salon de Reyes SwingerSV 
+            Salón de Reyes SwingerSV
           </p>
           <h2 className="mb-6 text-3xl font-bold tracking-tight text-foreground sm:text-4xl font-[var(--font-playfair)] text-balance">
             Los Reyes de SwingerSV
@@ -83,7 +78,7 @@ export function KingsSection() {
               <div className="relative aspect-square md:aspect-auto">
                 <Image
                   src={king.image}
-                  alt={`Reyes de SwingerSV: ${king.name}`}
+                  alt={`Reyes de SwingerSV — ${king.name}, elegidos en ${king.electedDate}`}
                   fill
                   className="object-cover transition-opacity duration-500"
                   sizes="(max-width: 768px) 100vw, 50vw"
