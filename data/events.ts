@@ -51,7 +51,7 @@ export const events: Event[] = [
     whatsappText: "Somos%20parejas%20y%20nos%20gustar%C3%ADa%20saber%20m%C3%A1s%20sobre%20el%20evento%20Entre%20Chicas%20del%207%20de%20Marzo",
   },
   {
-    slug: "disco swingersv 2026",
+    slug: "disco-swingersv-2026",
     title: "Fiesta Disco SwingerSV",
     tag: "Fiesta",
     date: "Sábado 21 de Marzo, 2026",
