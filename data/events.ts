@@ -13,25 +13,25 @@
 //
 // IMAGEN DEL AFICHE:
 // - Sube la imagen a /public/images/eventos/
-// - Escribe el nombre del archivo en el campo "image"
+// - Escribe SOLO el nombre del archivo en el campo "image"
 // - Ejemplo: image: "fiesta-disco-marzo.jpg"
 // - Si no tienes afiche aún, deja image: null
 // ============================================================
 
 export interface Event {
-  slug: string           // URL amigable: "fiesta-disco-marzo-2026"
-  title: string          // Nombre del evento
-  tag: string            // Etiqueta: "Próxima" | "Fiesta" | "Evento" | "Especial"
-  date: string           // Texto visible: "Sábado 21 de Marzo, 2026"
-  dateISO: string        // Fecha ISO para Schema y ordenamiento: "2026-03-21T20:00:00-06:00"
-  dateISOEnd: string     // Fecha fin ISO: "2026-03-22T02:00:00-06:00"
-  time: string           // Horario visible: "8:00 PM - 2:00 AM"
-  location: string       // Ubicación visible: "Colonia Escalón, San Salvador"
-  locationFull: string   // Para Schema: "San Salvador, El Salvador"
-  spots: string          // "Acceso libre" | "Cupos limitados"
-  image: string | null   // Nombre del archivo en /public/images/eventos/ o null
-  highlight: boolean     // true = tarjeta destacada (solo el más próximo)
-  whatsappText: string   // Texto pre-escrito para WhatsApp
+  slug: string
+  title: string
+  tag: string
+  date: string
+  dateISO: string
+  dateISOEnd: string
+  time: string
+  location: string
+  locationFull: string
+  spots: string
+  image: string | null   // SOLO el nombre del archivo, ej: "afiche.jpg" — o null
+  highlight: boolean
+  whatsappText: string
 }
 
 export const events: Event[] = [
@@ -46,7 +46,7 @@ export const events: Event[] = [
     location: "San Salvador",
     locationFull: "San Salvador, El Salvador",
     spots: "Acceso libre",
-    image: "/images/eventos/SwingerSV-entre-chicas-marzo-2026.jpg",
+    image: "SwingerSV-entre-chicas-2026.jpg",
     highlight: true,
     whatsappText: "Somos%20parejas%20y%20nos%20gustar%C3%ADa%20saber%20m%C3%A1s%20sobre%20el%20evento%20Entre%20Chicas%20del%207%20de%20Marzo",
   },
@@ -61,7 +61,7 @@ export const events: Event[] = [
     location: "Colonia Escalón, San Salvador",
     locationFull: "Colonia Escalón, San Salvador, El Salvador",
     spots: "Cupos limitados",
-    image: null, // Ejemplo: "fiesta-disco-marzo-2026.jpg"
+    image: null,
     highlight: false,
     whatsappText: "Somos%20parejas%20y%20nos%20gustar%C3%ADa%20saber%20m%C3%A1s%20sobre%20la%20Fiesta%20Disco%20del%2021%20de%20Marzo",
   },
@@ -76,7 +76,7 @@ export const events: Event[] = [
     location: "Playa San Diego, La Libertad",
     locationFull: "Playa San Diego, La Libertad, El Salvador",
     spots: "Cupos limitados",
-    image: null, // Ejemplo: "pool-party-abril-2026.jpg"
+    image: null,
     highlight: false,
     whatsappText: "Somos%20parejas%20y%20nos%20gustar%C3%ADa%20saber%20m%C3%A1s%20sobre%20el%20Pool%20Party%20del%2018%20de%20Abril",
   },
@@ -88,17 +88,15 @@ export const events: Event[] = [
 // FUNCIONES AUTOMÁTICAS — No tocar
 // ============================================================
 
-// Devuelve solo los 3 próximos eventos ordenados por fecha
 export function getUpcomingEvents(): Event[] {
   const now = new Date()
   return events
     .filter((e) => new Date(e.dateISO) > now)
     .sort((a, b) => new Date(a.dateISO).getTime() - new Date(b.dateISO).getTime())
     .slice(0, 3)
-    .map((e, i) => ({ ...e, highlight: i === 0 })) // El primero siempre destacado
+    .map((e, i) => ({ ...e, highlight: i === 0 }))
 }
 
-// Devuelve todos los eventos para el Schema de Google
 export function getAllEventsForSchema() {
   return getUpcomingEvents().map((event, index) => ({
     "@type": "ListItem",
@@ -126,10 +124,9 @@ export function getAllEventsForSchema() {
       },
       offers: {
         "@type": "Offer",
-        availability:
-          event.spots === "Acceso libre"
-            ? "https://schema.org/InStock"
-            : "https://schema.org/LimitedAvailability",
+        availability: event.spots === "Acceso libre"
+          ? "https://schema.org/InStock"
+          : "https://schema.org/LimitedAvailability",
         url: `https://wa.me/50369207547?text=${event.whatsappText}`,
       },
       image: event.image
