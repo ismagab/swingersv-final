@@ -1,4 +1,5 @@
 import Image from "next/image"
+import Link from "next/link"
 
 export function SiteFooter() {
   return (
@@ -6,7 +7,7 @@ export function SiteFooter() {
       <div className="mx-auto max-w-7xl px-6 py-12">
         <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
           {/* Brand */}
-          <div className="lg:col-span-2">
+          <div className="lg:col-span-1">
             <div className="mb-4">
               <Image
                 src="/images/logo.png"
@@ -23,28 +24,52 @@ export function SiteFooter() {
             </p>
           </div>
 
-          {/* Links */}
+          {/* Navegación */}
           <div>
             <h4 className="mb-4 text-xs font-semibold uppercase tracking-wider text-primary">
               Navegación
             </h4>
             <ul className="flex flex-col gap-3">
               {[
-                { label: "Inicio", href: "#hero" },
-                { label: "Nosotros", href: "#about" },
-                { label: "Fiestas", href: "#events" },
-                { label: "Reglas de Oro", href: "#rules" },
-                { label: "Reyes", href: "#kings" },
-                { label: "Singles", href: "#singles" },
-                { label: "Registro", href: "#contact" },
+                { label: "Inicio", href: "/#hero" },
+                { label: "Nosotros", href: "/#about" },
+                { label: "Fiestas", href: "/#events" },
+                { label: "Reglas de Oro", href: "/#rules" },
+                { label: "Reyes", href: "/#kings" },
+                { label: "Singles", href: "/#singles" },
+                { label: "Registro", href: "/#contact" },
               ].map((link) => (
                 <li key={link.href}>
-                  <a
+                  <Link
                     href={link.href}
                     className="text-sm text-muted-foreground transition-colors hover:text-primary"
                   >
                     {link.label}
-                  </a>
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Comunidad */}
+          <div>
+            <h4 className="mb-4 text-xs font-semibold uppercase tracking-wider text-primary">
+              Comunidad
+            </h4>
+            <ul className="flex flex-col gap-3">
+              {[
+                { label: "Fiestas Swinger en El Salvador", href: "/fiestas-swinger-san-salvador" },
+                { label: "Comunidad Swinger SV", href: "/comunidad-swinger-el-salvador" },
+                { label: "Glosario Swinger", href: "/glosario-swinger" },
+                { label: "Conoce a los Hosts", href: "/hosts-isma-gab" },
+              ].map((link) => (
+                <li key={link.href}>
+                  <Link
+                    href={link.href}
+                    className="text-sm text-muted-foreground transition-colors hover:text-primary"
+                  >
+                    {link.label}
+                  </Link>
                 </li>
               ))}
             </ul>
