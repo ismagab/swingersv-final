@@ -2,86 +2,40 @@
 
 import { useState } from "react"
 import Image from "next/image"
-import { CalendarDays, MapPin, Clock, Users, ImageOff, X, MessageCircle } from "lucide-react"
+import { CalendarDays, MapPin, Clock, Users, ImageOff, X } from "lucide-react"
 import { getUpcomingEvents, type Event } from "@/data/events"
 
 const upcomingEvents = getUpcomingEvents()
 
-function Lightbox({ event, onClose }: { event: Event; onClose: () => void }) {
+function ImageLightbox({ event, onClose }: { event: Event; onClose: () => void }) {
   return (
     <div
-      className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 p-4"
+      className="fixed inset-0 z-50 flex items-center justify-center bg-black/95 p-4"
       onClick={onClose}
     >
+      {/* Botón cerrar */}
+      <button
+        onClick={onClose}
+        className="absolute top-4 right-4 z-10 rounded-full bg-white/10 p-2 text-white hover:bg-white/20 transition-colors"
+      >
+        <X className="h-6 w-6" />
+      </button>
+
+      {/* Imagen a pantalla completa */}
       <div
-        className="relative w-full max-w-lg rounded-2xl overflow-hidden bg-card border border-border/60 shadow-2xl"
+        className="relative w-full max-w-2xl aspect-[4/3]"
         onClick={(e) => e.stopPropagation()}
       >
-        {/* Botón cerrar */}
-        <button
-          onClick={onClose}
-          className="absolute top-3 right-3 z-10 rounded-full bg-black/60 p-2 text-white backdrop-blur-sm hover:bg-black/80 transition-colors"
-        >
-          <X className="h-5 w-5" />
-        </button>
-
-        {/* Imagen grande */}
-        <div className="relative w-full aspect-[4/3]">
-          {event.image ? (
-            <Image
-              src={`/images/eventos/${event.image}`}
-              alt={`Afiche ${event.title} — SwingerSV`}
-              fill
-              className="object-cover"
-              sizes="100vw"
-              priority
-            />
-          ) : (
-            <div className="flex h-full w-full flex-col items-center justify-center gap-2 bg-secondary/40 text-muted-foreground/30">
-              <ImageOff className="h-12 w-12" />
-              <span className="text-xs uppercase tracking-widest">Afiche próximamente</span>
-            </div>
-          )}
-          <span className={`absolute top-3 left-3 inline-flex rounded-md px-3 py-1 text-[10px] font-bold uppercase tracking-widest backdrop-blur-sm ${
-            event.highlight ? "bg-primary/80 text-primary-foreground" : "bg-black/60 text-white"
-          }`}>
-            {event.tag}
-          </span>
-        </div>
-
-        {/* Info del evento */}
-        <div className="p-6">
-          <h3 className="mb-4 text-xl font-semibold text-foreground leading-snug">
-            {event.title}
-          </h3>
-          <div className="flex flex-col gap-3 text-sm text-muted-foreground mb-6">
-            <div className="flex items-center gap-3">
-              <CalendarDays className="h-4 w-4 shrink-0 text-primary/70" />
-              <span>{event.date}</span>
-            </div>
-            <div className="flex items-center gap-3">
-              <Clock className="h-4 w-4 shrink-0 text-primary/70" />
-              <span>{event.time}</span>
-            </div>
-            <div className="flex items-center gap-3">
-              <MapPin className="h-4 w-4 shrink-0 text-primary/70" />
-              <span>{event.location}</span>
-            </div>
-            <div className="flex items-center gap-3">
-              <Users className="h-4 w-4 shrink-0 text-primary/70" />
-              <span>{event.spots}</span>
-            </div>
-          </div>
-          <a
-            href={`https://wa.me/50369207547?text=${event.whatsappText}`}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex w-full items-center justify-center gap-2 rounded-lg bg-primary/10 border border-primary/40 px-4 py-3 text-sm font-semibold uppercase tracking-wider text-primary transition-all hover:bg-primary/20"
-          >
-            <MessageCircle className="h-4 w-4" />
-            Solicitar información
-          </a>
-        </div>
+        {event.image && (
+          <Image
+            src={`/images/eventos/${event.image}`}
+            alt={`Afiche ${event.title} — SwingerSV`}
+            fill
+            className="object-contain rounded-xl"
+            sizes="100vw"
+            priority
+          />
+        )}
       </div>
     </div>
   )
@@ -105,7 +59,8 @@ export function EventsSection() {
           </h2>
           <p className="leading-relaxed text-muted-foreground">
             Nuestras fiestas son exclusivas para parejas validadas. La ubicación
-            exacta se comparte solo 1 día antes del evento por seguridad y discreción.
+            exacta se comparte solo 1 día antes del evento por seguridad y
+            discreción.
           </p>
         </div>
 
@@ -120,10 +75,10 @@ export function EventsSection() {
                   : "border-border/60 bg-card"
               }`}
             >
-              {/* Afiche — toca para abrir lightbox */}
+              {/* Afiche — solo esto abre el lightbox */}
               <div
-                className="relative w-full aspect-[4/3] overflow-hidden bg-secondary/40 cursor-pointer"
-                onClick={() => setSelectedEvent(event)}
+                className={`relative w-full aspect-[4/3] overflow-hidden bg-secondary/40 ${event.image ? "cursor-zoom-in" : ""}`}
+                onClick={() => event.image && setSelectedEvent(event)}
               >
                 {event.image ? (
                   <Image
@@ -139,28 +94,43 @@ export function EventsSection() {
                     <span className="text-xs uppercase tracking-widest">Afiche próximamente</span>
                   </div>
                 )}
+
+                {/* Tag */}
                 <span className={`absolute top-3 left-3 inline-flex rounded-md px-3 py-1 text-[10px] font-bold uppercase tracking-widest backdrop-blur-sm ${
-                  event.highlight ? "bg-primary/80 text-primary-foreground" : "bg-black/60 text-white"
+                  event.highlight
+                    ? "bg-primary/80 text-primary-foreground"
+                    : "bg-black/60 text-white"
                 }`}>
                   {event.tag}
                 </span>
-                {/* Hint hover */}
-                <div className="absolute inset-0 flex items-center justify-center bg-black/0 group-hover:bg-black/30 transition-colors duration-300">
-                  <span className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-white text-xs font-semibold uppercase tracking-widest bg-black/50 px-3 py-2 rounded-lg backdrop-blur-sm">
-                    Ver detalle
-                  </span>
-                </div>
               </div>
 
-              {/* Título + botón */}
-              <div className="flex flex-col flex-1 p-5">
-                <h3
-                  className="mb-4 text-base font-semibold text-foreground leading-snug cursor-pointer hover:text-primary transition-colors"
-                  onClick={() => setSelectedEvent(event)}
-                >
+              {/* Info completa — igual que antes */}
+              <div className="flex flex-col flex-1 p-6">
+                <h3 className="mb-4 text-lg font-semibold text-foreground">
                   {event.title}
                 </h3>
-                <div className="mt-auto">
+
+                <div className="flex flex-col gap-3 text-sm text-muted-foreground">
+                  <div className="flex items-center gap-3">
+                    <CalendarDays className="h-4 w-4 shrink-0 text-primary/70" />
+                    <span>{event.date}</span>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <Clock className="h-4 w-4 shrink-0 text-primary/70" />
+                    <span>{event.time}</span>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <MapPin className="h-4 w-4 shrink-0 text-primary/70" />
+                    <span>{event.location}</span>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <Users className="h-4 w-4 shrink-0 text-primary/70" />
+                    <span>{event.spots}</span>
+                  </div>
+                </div>
+
+                <div className="mt-6 pt-4 border-t border-border/40">
                   <a
                     href={`https://wa.me/50369207547?text=${event.whatsappText}`}
                     target="_blank"
@@ -186,9 +156,9 @@ export function EventsSection() {
         </div>
       </div>
 
-      {/* Lightbox */}
+      {/* Lightbox — solo imagen grande con X */}
       {selectedEvent && (
-        <Lightbox event={selectedEvent} onClose={() => setSelectedEvent(null)} />
+        <ImageLightbox event={selectedEvent} onClose={() => setSelectedEvent(null)} />
       )}
     </section>
   )
