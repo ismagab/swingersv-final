@@ -47,7 +47,7 @@ export const events: Event[] = [
     image: "entrechicas2026.jpg",
     highlight: true,
     whatsappText: "Somos%20parejas%20y%20nos%20gustar%C3%ADa%20saber%20m%C3%A1s%20sobre%20el%20evento%20Entre%20Chicas%20del%207%20de%20Marzo",
-    ctaType: "whatsapp",
+    ctaType: "form",
   },
   {
     slug: "disco-swingersv-2026",
@@ -79,7 +79,7 @@ export const events: Event[] = [
     image: "poolparty2026.jpg",
     highlight: false,
     whatsappText: "Somos%20parejas%20y%20nos%20gustar%C3%ADa%20saber%20m%C3%A1s%20sobre%20el%20Pool%20Party%20del%2018%20de%20Abril",
-    ctaType: "whatsapp",
+    ctaType: "form",
   },
 
   // ← AGREGA NUEVOS EVENTOS AQUÍ ABAJO
