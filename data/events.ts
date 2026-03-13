@@ -72,7 +72,7 @@ export const events: Event[] = [
     date: "Sábado 18 de Abril, 2026",
     dateISO: "2026-04-18T17:00:00-06:00",
     dateISOEnd: "2026-04-19T02:00:00-06:00",
-    time: "5:00 PM - 2:00 AM",
+    time: "5:00 PM - 2:00 PM",
     location: "Playa San Diego, La Libertad",
     locationFull: "Playa San Diego, La Libertad, El Salvador",
     spots: "Cupos limitados",
