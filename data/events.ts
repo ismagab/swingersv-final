@@ -5,17 +5,14 @@
 // El sitio web, el Schema de Google y las tarjetas se
 // actualizan automáticamente en el próximo deploy.
 //
-// CÓMO AGREGAR UN EVENTO:
-// 1. Copia un bloque { } existente
-// 2. Pégalo al final del array
-// 3. Cambia los datos
-// 4. Push a GitHub → listo
-//
 // IMAGEN DEL AFICHE:
 // - Sube la imagen a /public/images/eventos/
 // - Escribe SOLO el nombre del archivo en el campo "image"
-// - Ejemplo: image: "fiesta-disco-marzo.jpg"
 // - Si no tienes afiche aún, deja image: null
+//
+// BOTÓN DE EVENTO:
+// - ctaType: "form"      → lleva al formulario de registro /#contact
+// - ctaType: "whatsapp"  → abre WhatsApp directo
 // ============================================================
 
 export interface Event {
@@ -29,9 +26,10 @@ export interface Event {
   location: string
   locationFull: string
   spots: string
-  image: string | null   // SOLO el nombre del archivo, ej: "afiche.jpg" — o null
+  image: string | null
   highlight: boolean
   whatsappText: string
+  ctaType: "form" | "whatsapp"
 }
 
 export const events: Event[] = [
@@ -49,6 +47,7 @@ export const events: Event[] = [
     image: "entrechicas2026.jpg",
     highlight: true,
     whatsappText: "Somos%20parejas%20y%20nos%20gustar%C3%ADa%20saber%20m%C3%A1s%20sobre%20el%20evento%20Entre%20Chicas%20del%207%20de%20Marzo",
+    ctaType: "whatsapp",
   },
   {
     slug: "disco-swingersv-2026",
@@ -60,10 +59,11 @@ export const events: Event[] = [
     time: "8:00 PM - 2:00 AM",
     location: "Colonia Escalón, San Salvador",
     locationFull: "Colonia Escalón, San Salvador, El Salvador",
-    spots: "Cupos limitados",
+    spots: "Cupos limitados — Cover $25",
     image: "discoswinger2026.jpg",
     highlight: false,
     whatsappText: "Somos%20parejas%20y%20nos%20gustar%C3%ADa%20saber%20m%C3%A1s%20sobre%20la%20Fiesta%20Disco%20del%2021%20de%20Marzo",
+    ctaType: "form",
   },
   {
     slug: "pool-party-playa-san-diego-abril-2026",
@@ -79,6 +79,7 @@ export const events: Event[] = [
     image: "poolparty2026.jpg",
     highlight: false,
     whatsappText: "Somos%20parejas%20y%20nos%20gustar%C3%ADa%20saber%20m%C3%A1s%20sobre%20el%20Pool%20Party%20del%2018%20de%20Abril",
+    ctaType: "whatsapp",
   },
 
   // ← AGREGA NUEVOS EVENTOS AQUÍ ABAJO
@@ -124,10 +125,14 @@ export function getAllEventsForSchema() {
       },
       offers: {
         "@type": "Offer",
-        availability: event.spots === "Acceso libre"
-          ? "https://schema.org/InStock"
-          : "https://schema.org/LimitedAvailability",
-        url: `https://wa.me/50369207547?text=${event.whatsappText}`,
+        availability:
+          event.spots === "Acceso libre"
+            ? "https://schema.org/InStock"
+            : "https://schema.org/LimitedAvailability",
+        url:
+          event.ctaType === "form"
+            ? "https://www.swingersv.com/#contact"
+            : `https://wa.me/50369207547?text=${event.whatsappText}`,
       },
       image: event.image
         ? `https://www.swingersv.com/images/eventos/${event.image}`
