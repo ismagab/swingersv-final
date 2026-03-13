@@ -60,7 +60,7 @@ export const events: Event[] = [
     location: "Colonia Escalón, San Salvador",
     locationFull: "Colonia Escalón, San Salvador, El Salvador",
     spots: "Cupos limitados — Cover $25",
-    image: "discoswinger2026.jpg",
+    image: "discoswingersv2026.jpg",
     highlight: false,
     whatsappText: "Somos%20parejas%20y%20nos%20gustar%C3%ADa%20saber%20m%C3%A1s%20sobre%20la%20Fiesta%20Disco%20del%2021%20de%20Marzo",
     ctaType: "form",
